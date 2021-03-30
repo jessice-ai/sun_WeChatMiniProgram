@@ -1,2 +1,20 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="container">
+    <view class="page-section-spacing">
+      <!--
+        1、scroll-y="true" 纵向滚动
+      -->
+        <scroll-view scroll-y="true" style="height: 300rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+          <view id="demo1" class="scroll-view-item demo-text-1"></view>
+          <view id="demo2"  class="scroll-view-item demo-text-2"></view>
+          <view id="demo3" class="scroll-view-item demo-text-3"></view>
+        </scroll-view>
+      </view>
+    <view class="suncatlista">
+      <view class="suncatlistaa" wx:for="{{sun_Data}}" wx:key="index">{{item.name}}</view>
+    </view>
+    <view class="suncatlistb">
+      <view class="suncatlistb">hhh</view>
+    </view>
+    <div class="suncatlistc"></div>
+</view>

@@ -1,1 +1,36 @@
 /* pages/category/category.wxss */
+.container{
+  display: block;
+  width: 100%;
+}
+.suncatlista {
+  display: block;
+  float:left;
+  width: 100px;
+  overflow:hidden;
+}
+.suncatlistaa {
+  padding-top:10px;
+  padding-bottom:10px;
+  width:100%;
+  font-size:14px;
+  line-height: 24px;
+  height: 24px;
+  background:#e3e3e3;
+  text-align: center;
+}
+.suncatlistb{
+  display: block;
+  float: left;
+  margin-left:5px;
+  width: auto;
+  height: 200px;
+  background:red;
+  float:left
+}
+.suncatlistc{
+  clear:both;
+  display: block;
+  width: 100%;
+  height: 10px;
+}
