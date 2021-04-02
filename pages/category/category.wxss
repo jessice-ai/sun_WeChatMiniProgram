@@ -1,12 +1,17 @@
 /* pages/category/category.wxss */
+pages{
+  background: #ffffff;
+}
 .container{
+  padding:0px;
   display: block;
   width: 100%;
+  position: fixed; /*父容器添加*/
 }
 .suncatlista {
-  display: block;
   float:left;
-  width: 100px;
+  font-size: 14px;
+  width: 20%; /*宽度使用百分比*/
   overflow:hidden;
 }
 .suncatlistaa {
@@ -14,23 +19,61 @@
   padding-bottom:10px;
   width:100%;
   font-size:14px;
-  line-height: 24px;
-  height: 24px;
-  background:#e3e3e3;
+  line-height: 36px;
+  height: 36px;
+  background:#f0f0f0;
   text-align: center;
 }
 .suncatlistb{
-  display: block;
-  float: left;
-  margin-left:5px;
-  width: auto;
-  height: 200px;
-  background:red;
-  float:left
+  padding-left:2%;
+  width:76%; /*宽度使用百分比*/
+  overflow: hidden;
 }
 .suncatlistc{
   clear:both;
   display: block;
   width: 100%;
-  height: 10px;
+  height: auto;
 }
+.suncatlistbba{
+  width: 32%;
+  height: 108px;
+  margin-left: 1%;
+  float: left;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.suncatlistbba image{
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin:0 auto;
+}
+.suncatlistbba text{
+  display:block;
+  height: 28px;
+  line-height: 28px;
+  font-size: 12px;
+  text-align: center;
+}
+.suncatlistbb_line{
+  text-indent: 6px;
+  margin-top:10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  clear: both;
+  display: block;
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+}
+.sun_checked{
+  background:#fff;
+}
+/*竖向滑动条样式*/
+::-webkit-scrollbar 
+{ 
+ width: 0; 
+ height: 0; 
+ color: transparent; 
+} 

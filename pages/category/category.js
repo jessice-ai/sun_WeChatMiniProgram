@@ -6,17 +6,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sun_Data:[]
+    sun_Data:[], //一级分类数组
+    sun_Son_Data:[], //二级分类数组
+    height:0,
+    width:0,
+    catid:0,
+    checkedId:6
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //远程获取数据
+    this.setData({
+      height: wx.getSystemInfoSync().windowHeight, //获取屏幕高度
+      width: wx.getSystemInfoSync().windowWidth //获取屏幕宽度
+    })
+    //远程获取数据 - 左侧数据
+    this.catid = 0
+    this.checkedId = 6
     this.getData()
+    this.catid = 6
+    //远程数据获取 - 右侧数据
+    this.getSonData()
   },
- //POST请求
+ //POST请求,获取一级分类
  getData(){
   //使用父级的this
   var that = this
@@ -24,7 +38,7 @@ Page({
     url: 'https://www.shsun.xyz/tbcouponseconday/getcategory', //接口地址
     //POST body内容
     data: {
-      'catid': '1',
+      'catid': this.catid,
       'uid':24
     },
     
@@ -33,7 +47,7 @@ Page({
       'content-type': 'application/json', // 默认值
     },
     success (res) {
-      console.log(res.data["data"])
+      //console.log(res.data["data"])
       //1、注意这里的that不能使用this，否则会提示找不到
       //2、onLoad 调用 - 数据更新,无法实时渲染页面
       that.setData({
@@ -42,7 +56,35 @@ Page({
       //console.log(that.data.sun_Data) 
     }
   })
-  
+},
+
+//POST请求,获取二级分类
+getSonData(){
+  //使用父级的this
+  var that = this
+  //console.log(this.catid);
+  wx.request({
+    url: 'https://www.shsun.xyz/tbcouponseconday/secla', //接口地址
+    //POST body内容
+    data: {
+      'catid': this.catid,
+      'uid':24
+    },
+    
+    method:'POST', //GET,POST
+    header: {
+      'content-type': 'application/json', // 默认值
+    },
+    success (res) {
+      //console.log(res.data["data"])
+      //1、注意这里的that不能使用this，否则会提示找不到
+      //2、onLoad 调用 - 数据更新,无法实时渲染页面
+      that.setData({
+        sun_Son_Data:res.data["data"]?res.data["data"]:[]
+      })
+      //console.log(that.data.sun_Son_Data) 
+    }
+  })
 },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -92,38 +134,13 @@ Page({
   onShareAppMessage: function () {
 
   },
-  upper(e) {
-    console.log(e)
-  },
-
-  lower(e) {
-    console.log(e)
-  },
-
-  scroll(e) {
-    console.log(e)
-  },
-
-  scrollToTop() {
-    this.setAction({
-      scrollTop: 0
-    })
-  },
-  tap() {
-    for (let i = 0; i < order.length; ++i) {
-      if (order[i] === this.data.toView) {
-        this.setData({
-          toView: order[i + 1],
-          scrollTop: (i + 1) * 200
-        })
-        break
-      }
-    }
-  },
-
-  tapMove() {
+  sunclick(event){
+    var param =  event.currentTarget.dataset.id //传过来的值
+    //console.log(param)
+    this.catid = param;
     this.setData({
-      scrollTop: this.data.scrollTop + 10
+      checkedId : param
     })
-  }
+    this.getSonData()
+   },
 })

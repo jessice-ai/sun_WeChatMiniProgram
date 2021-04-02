@@ -1,20 +1,28 @@
 <!--pages/category/category.wxml-->
 <view class="container">
-    <view class="page-section-spacing">
-      <!--
-        1、scroll-y="true" 纵向滚动
-      -->
-        <scroll-view scroll-y="true" style="height: 300rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-          <view id="demo1" class="scroll-view-item demo-text-1"></view>
-          <view id="demo2"  class="scroll-view-item demo-text-2"></view>
-          <view id="demo3" class="scroll-view-item demo-text-3"></view>
-        </scroll-view>
-      </view>
     <view class="suncatlista">
-      <view class="suncatlistaa" wx:for="{{sun_Data}}" wx:key="index">{{item.name}}</view>
+      <!-- 设置左右两个布局 高度一样  -->
+      <scroll-view scroll-y style="width: 100%; height:{{height}}px;" refresher-background="#fff" >
+        <view class="suncatlistaa {{item.id==checkedId?'sun_checked':''}}"  wx:for="{{sun_Data}}" wx:key="index" bindtap="sunclick" data-id="{{item.id}}" wx:if="{{item.name!='全部'}}">
+          {{item.name}}
+        </view>
+      </scroll-view>
     </view>
     <view class="suncatlistb">
-      <view class="suncatlistb">hhh</view>
+      <!-- 设置左右两个布局 高度一样   -->
+      <scroll-view scroll-y style="height:{{height}}px;" refresher-background="#fff" >
+        <view class="suncatlistbb" wx:for="{{sun_Son_Data}}" wx:key="index"  >
+          <!-- 热门推荐-->
+          <view class="suncatlistbb_line">{{item.name}}</view>
+            <view wx:for="{{item.son}}" wx:key="index" >
+              <view class="suncatlistbba" >
+                <image src="{{item.cat_image}}" />
+                <text>{{item.name}}</text>
+              </view>
+            </view>
+          <!-- 不是热门推荐 -->
+        </view>
+      </scroll-view>
     </view>
     <div class="suncatlistc"></div>
 </view>
