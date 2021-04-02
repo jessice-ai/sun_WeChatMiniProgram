@@ -1,4 +1,4 @@
 <!--index.wxml-->
-<view class="container">
-  
+<view class="sun_container">
+  <mp-searchbar class="sun_search" bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
 </view>

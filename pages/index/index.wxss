@@ -1,19 +1,14 @@
 /**index.wxss**/
-.userinfo {
+@import '/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+
+.sun_container{
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: #aaa;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
-
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.usermotto {
-  margin-top: 200px;
+.sun_search{
+  width: 95%;
+  margin:0 auto;
 }

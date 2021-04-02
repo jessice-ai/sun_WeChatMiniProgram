@@ -1,0 +1,22 @@
+{
+  "name": "sun",
+  "version": "1.0.0",
+  "description": "微信小程序",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessice-ai/sun_WeChatMiniProgram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessice-ai/sun_WeChatMiniProgram/issues"
+  },
+  "homepage": "https://github.com/jessice-ai/sun_WeChatMiniProgram#readme",
+  "dependencies": {
+    "weui-miniprogram": "^1.0.7"
+  }
+}
