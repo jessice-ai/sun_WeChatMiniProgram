@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/jessice-ai/sun_WeChatMiniProgram#readme",
   "dependencies": {
+    "@miniprogram-component-plus/tabs": "^1.0.0",
+    "@vant/weapp": "^1.6.8",
     "weui-miniprogram": "^1.0.7"
   }
 }

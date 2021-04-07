@@ -1,0 +1,86 @@
+<van-tabs active="{{ active }}" bind:change="onChange" >
+  <van-tab title="拼多多" >
+    <!--开始-->
+      <view wx:for="{{sun_Search_Data}}" wx:key="index">
+              <view class="suns">
+                <view class="sunsa"><image src="{{item.pict_url}}" style="width:{{width}}px;height:{{width}}px"/></view>
+                <view class="sunsb">
+                  {{height}} - {{item.title}}
+                  <div class="sun_button-sp-area">
+                    <button class="mini-btn" bindtap="sunDumpclick" data-id="{{item}}" type="primary" size="mini">分享</button>
+                    <button class="mini-btn" bindtap="sunDumpclick" data-id="{{item}}" type="default" size="mini">自购</button>
+                  </div>
+                </view>
+              </view>
+              <view class="sunm"></view>
+              </view>
+              <view class="sunloading">
+                <block wx:if="{{hasMore==2}}">
+                  加载中...
+                </block>
+                <block wx:if="{{hasMore==3}}">
+                  没有更多数据了
+                </block>
+                <block wx:if="{{hasMore==4}}">
+                  没有数据
+                </block>
+              </view>
+      <!--结束-->
+  </van-tab>
+  <van-tab title="京东">
+    <!--开始-->
+    <view wx:for="{{sun_Search_Data}}" wx:key="index">
+              <view class="suns">
+                <view class="sunsa"><image src="{{item.pict_url}}" style="width:{{width}}px;height:{{width}}px"/></view>
+                <view class="sunsb">
+                  {{height}} - {{item.title}}
+                  <div class="sun_button-sp-area">
+                    <button class="mini-btn" bindtap="sunDumpclick" data-id="{{item}}" type="primary" size="mini">分享</button>
+                    <button class="mini-btn" bindtap="sunDumpclick" data-id="{{item}}" type="default" size="mini">自购</button>
+                  </div>
+                </view>
+              </view>
+              <view class="sunm"></view>
+              </view>
+              <view class="sunloading">
+                <block wx:if="{{hasMore==2}}">
+                  加载中...
+                </block>
+                <block wx:if="{{hasMore==3}}">
+                  没有更多数据了
+                </block>
+                <block wx:if="{{hasMore==4}}">
+                  没有数据
+                </block>
+              </view>
+      <!--结束-->
+  </van-tab>
+  <van-tab title="唯品会">
+    <!--开始-->
+    <view wx:for="{{sun_Search_Data}}" wx:key="index">
+              <view class="suns">
+                <view class="sunsa"><image src="{{item.pict_url}}" style="width:{{width}}px;height:{{width}}px"/></view>
+                <view class="sunsb">
+                  {{height}} - {{item.title}}
+                  <div class="sun_button-sp-area">
+                    <button class="mini-btn" bindtap="sunDumpclick" data-id="{{item}}" type="primary" size="mini">分享</button>
+                    <button class="mini-btn" bindtap="sunDumpclick" data-id="{{item}}" type="default" size="mini">自购</button>
+                  </div>
+                </view>
+              </view>
+              <view class="sunm"></view>
+              </view>
+              <view class="sunloading">
+                <block wx:if="{{hasMore==2}}">
+                  加载中...
+                </block>
+                <block wx:if="{{hasMore==3}}">
+                  没有更多数据了
+                </block>
+                <block wx:if="{{hasMore==4}}">
+                  没有数据
+                </block>
+              </view>
+      <!--结束-->
+  </van-tab>
+</van-tabs>
